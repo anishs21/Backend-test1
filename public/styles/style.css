@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    overflow: hidden;
+    outline: none;
+    border: none;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    height: 100vh;
+    background-color: #ffffffea;
+}
+::placeholder{
+    color: black;
+    opacity: .9;
+}
+.createPostBox{
+    position: relative;
+    width: 40%;
+    left: 50%;
+    top: 50%;
+    transform: translate( -50%, -50%);
+    background-color: #5ce1e6;
+    border-radius: 36px;
+    box-shadow: 0 0 5px #919191;
+    animation: showUp 2.5s ease-in-out;
+}
+@keyframes showUp {
+    0%,30%{
+
+        top: -50%;
+        transform: translate(-50%, -100%);
+    }
+    85%{
+        top: 45%;
+        transform: translate( -50%, -45%);
+    }
+    90%{
+        top: 55%;
+        transform: translate( -50%, -55%);
+    }
+    95%{
+        top: 45%;
+        transform: translate( -50%, -54%);
+    }
+    100%{
+        top: 50%;
+        transform: translate( -50%, -50%);
+
+    }
+}
+.createPostBox #postHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    border-bottom: 2px solid #afafaf11;
+    margin-top: 22px;
+}
+.createPostBox #postHeader h1 {
+    margin: 5px 0px 5px 20px;
+    font-size: 1.2rem;
+     font-family: "Ubuntu", system-ui;
+     font-weight: 800;
+     color: rgb(0, 0, 0, .80);
+}
+.createPostBox #postHeader .exit-icon {
+    margin: 5px 20px 5px 0px;
+    font-size: 1.3rem;
+    line-height: 0%;
+}
+.createPostBox #postHeader .exit-icon:hover{
+    scale: 1.09;
+    color: rgba(52, 47, 47, 0.867);
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    margin: 2% 20px 5% 20px;
+    background-color: rgba(255, 255, 255, 0);
+}
+.content label {
+    font-weight: 800;
+    color: rgb(0, 0, 0, .80);
+    padding: 5px 0px;
+    font-family: "Open Sans", sans-serif;
+}
+.content #title,#user,#date {
+    height: 40px;
+    padding: 15px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: black;
+    background-color: rgb(255, 255, 255);
+    text-transform: capitalize;
+    font-family: "Poppins", sans-serif;
+}
+.content #contents {
+    height: 100px;
+    padding: 15px 20px;
+    border-radius: 6px;
+    color: black;
+    resize: none;
+    margin-bottom: 10px;
+    overflow-y: scroll;
+    background-color: rgb(255, 255, 255);
+    text-transform: capitalize;
+    font-family: "Poppins", sans-serif;
+}
+::-webkit-scrollbar{
+    width: 0px;
+}
+.content .submit {
+    position: absolute;
+    bottom: 15px;
+    right: 25px;
+    height: 45px;
+    width: 110px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    border-radius: 36px;
+    background-color: #ffbd59;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+.content .submit:active,.submit:hover{
+    background-color: #fbc26dfb;
+    border: 2px solid #ffa217;
+    color: #4a3617;
+}
+.createPostBox .wordCount{
+    position: relative;
+    bottom: 10px;
+    width: 50%;
+    height: 45px;
+    margin: 5px 0px 5px 20px;
+    padding-top: 2px;
+
+}
+.createPostBox .wordCount h3{
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    align-content: center;
+    border-radius: 50%;
+    background-color: azure;
+    padding: 5px;
+    margin-right: 5px;
+}
+.createPostBox .wordCount span{
+    position: absolute;
+    font-weight: 500;
+    font-size: 18px;
+    top: 12px;
+    left: 50px;
+    text-wrap: nowrap;
+    color: rgb(46, 46, 46);
+}
+/* [ Post edit styles] */
+.createPostBox #postHeader .edit-exit {
+    margin: 5px 20px 5px 0px;
+    font-size: 1.3rem;
+    line-height: 0%;
+}
+.createPostBox #postHeader .edit-exit:hover{
+    scale: 1.09;
+    color: rgba(52, 47, 47, 0.867);
+}
+
+@media (max-width: 768px){
+    .createPostBox{
+        width: 80%;
+    }
+}
+@media (max-width: 460px){
+    .createPostBox{
+        width: 85%;
+    }
+    .content .submit{
+        height: 35px;
+        width: 75px;
+        font-size: 16px;
+        bottom: 22px;
+    }
+    .createPostBox .wordCount{
+        width: 100%;
+        margin: 16px 5px 5px 20px;
+    }
+    .createPostBox .wordCount h3{
+        height: 35px;
+        width: 35px;
+        font-size: 13px;
+    }
+    .createPostBox .wordCount span{
+        font-size: 14px;
+        left: 40px;
+    }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <title>Home</title>
+</head>
+<body>
+    <header>
+        <nav>
+             <div id="userInfo">
+            <img src="/images/avatar.png" alt="avatar image" onclick="window.location.assign('/user_login')">
+        </div>
+        <button id="post-create-btn">
+            <i class="icon bi-pencil-square"></i>
+        </button>
+        </nav>
+    </header>
+    <section class="post-section">
+        <div class="post-container">
+            <%# Add forEch method for get all post content %>
+                <% postContent.forEach(el => { %>
+                    <div id="<%= el.id %>" class="posts" onclick="postView(this)">
+                        <h1><%= el.title %></h1>
+                        <h2><%= el.date %></h2>
+                        <h3>Author : <%= el.user %></h2>
+                        <p><%= el.content %></p>
+                    </div>
+               <% }); %>
+        </div>
+    </section>
+    <%- include("./partials/footer.ejs") %>
+    
+    <script src="/js/script.js"></script>
+</body>
+</html>

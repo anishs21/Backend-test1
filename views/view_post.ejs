@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Post View</title>
+</head>
+
+<body>
+    <%- include("./partials/header.ejs") %>
+        <section class="post-section" id="post-sections">
+            <div class="post-container" id="post-container">
+                <div class="posts" id="post">
+                    <h1>
+                        <%= postsData.title %>
+                    </h1>
+                    <h2>
+                        <%= postsData.date %>
+                    </h2>
+                    <h3>Author: <%= postsData.user %>
+                    </h3>
+                    <div class="content-container">
+                        <p id="contents">
+                        <%= postsData.content %>
+                    </p>
+                    </div>
+                    
+                    <div class="options">
+                        <button class="edit" onclick=" window.location.assign(`/edit/<%=postsData.id %>`)">Edit</button>
+                        <button class="delete" onclick=" window.location.assign(`/delete/<%=postsData.id %>`)">Delete</button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <%- include("./partials/footer.ejs") %>
+            <script src="/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/login.css">
+  <title>Login</title>
+</head>
+<body>
+  <div id="login-card">
+    <h1>Member Login</h1>
+    <form class="container" action="/login" method="POST">
+      <input
+        type="text"
+        name="username"
+        placeholder="Enter your username"
+        id="username"
+        autocomplete="username"
+        required
+      />
+      <input
+        type="password"
+        name="password"
+        placeholder="Enter your Password"
+        id="password"
+        autocomplete="new-password"
+        required
+      />
+      <input class="login" type="submit" value="Submit" />
+    </form>
+  </div>
+</body>
+</html>
